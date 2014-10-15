@@ -1,3 +1,12 @@
+wpa (1.0-3+deb7u1) wheezy-security; urgency=high
+
+  * Apply upstream patches for CVE-2014-3686 (Closes: #765352):
+    - add os_exec() helper to run external programs
+    - wpa_cli: Use os_exec() for action script execution
+    - hostapd_cli: Use os_exec() for action script execution
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 15 Oct 2014 23:32:54 +0200
+
 wpa (1.0-3) unstable; urgency=high
 
   * ship forgotten README-P2P.
