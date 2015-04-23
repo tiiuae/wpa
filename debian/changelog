@@ -1,3 +1,12 @@
+wpa (1.0-3+deb7u2) wheezy-security; urgency=high
+
+  * import "P2P: Validate SSID element length before copying it
+    (CVE-2015-1863)" from upstream (Closes: #783148); this is essentially a
+    no-op for the wheezy binaries distributed by Debian, as CONFIG_P2P is
+    disabled there.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Apr 2015 19:56:11 +0200
+
 wpa (1.0-3+deb7u1) wheezy-security; urgency=high
 
   * Apply upstream patches for CVE-2014-3686 (Closes: #765352):

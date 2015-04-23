@@ -10,3 +10,4 @@ EAP-TLS-server_fix-TLS-Message-length-validation.patch
 CVE-2014-3686/0001-Add-os_exec-helper-to-run-external-programs.patch
 CVE-2014-3686/0002-wpa_cli-Use-os_exec-for-action-script-execution.patch
 CVE-2014-3686/0003-hostapd_cli-Use-os_exec-for-action-script-execution.patch
+wpasupplicant_P2P-Validate-SSID-element-length-before-copying-it-C.patch
