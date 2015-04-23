@@ -1,3 +1,10 @@
+wpa (2.3-1+deb8u1) jessie-security; urgency=high
+
+  * import "P2P: Validate SSID element length before copying it
+    (CVE-2015-1863)" from upstream (Closes: #783148).
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Apr 2015 19:32:29 +0200
+
 wpa (2.3-1) unstable; urgency=medium
 
   * New upstream release:
