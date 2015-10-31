@@ -1,3 +1,22 @@
+wpa (1.0-3+deb7u3) wheezy-security; urgency=high
+
+  * Non-maintainer upload by the Security Team.
+  * Add patch to address CVE-2015-4141.
+    CVE-2015-4141: WPS UPnP vulnerability with HTTP chunked transfer
+    encoding. (Closes: #787372)
+  * Add patch to address CVE-2015-4142.
+    CVE-2015-4142: Integer underflow in AP mode WMM Action frame processing.
+    (Closes: #787373)
+  * Add patches to address CVE-2015-4143.
+    CVE-2015-4143: EAP-pwd missing payload length validation. (Closes: #787371)
+  * Add patch to address 2015-5 vulnerability.
+    NFC: Fix payload length validation in NDEF record parser.
+    Note that this issue does not affect the binary packages distributed in
+    Debian in Wheezy as CONFIG_WPS_NFC=y is not set in the build
+    configuration. (Closes: #795740)
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 31 Oct 2015 12:08:04 +0100
+
 wpa (1.0-3+deb7u2) wheezy-security; urgency=high
 
   * import "P2P: Validate SSID element length before copying it
