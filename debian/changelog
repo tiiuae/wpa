@@ -1,3 +1,17 @@
+wpa (2.3-1+deb8u3) jessie-security; urgency=high
+
+  * Non-maintainer upload by the Security Team.
+  * Add CVE-2015-5314.patch patch.
+    CVE-2015-5314: hostapd: EAP-pwd missing last fragment length validation.
+  * Add CVE-2015-5315.patch patch.
+    CVE-2015-5315: wpa_supplicant: EAP-pwd missing last fragment length
+    validation.
+  * Add CVE-2015-5316.patch patch.
+    CVE-2015-5316: EAP-pwd peer error path failure on unexpected Confirm
+    message.
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 07 Nov 2015 16:05:23 +0100
+
 wpa (2.3-1+deb8u2) jessie-security; urgency=high
 
   * Non-maintainer upload by the Security Team.
