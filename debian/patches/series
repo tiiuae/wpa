@@ -19,3 +19,8 @@ CVE-2015-5310.patch
 CVE-2015-5314.patch
 CVE-2015-5315.patch
 CVE-2015-5316.patch
+2016-1/0001-WPS-Reject-a-Credential-with-invalid-passphrase.patch
+2016-1/0002-Reject-psk-parameter-set-with-invalid-passphrase-cha.patch
+2016-1/0003-Remove-newlines-from-wpa_supplicant-config-network-o.patch
+2016-1/0004-Reject-SET_CRED-commands-with-newline-characters-in-.patch
+2016-1/0005-Reject-SET-commands-with-newline-characters-in-the-s.patch
