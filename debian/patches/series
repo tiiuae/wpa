@@ -16,3 +16,7 @@ wpasupplicant_P2P-Validate-SSID-element-length-before-copying-it-C.patch
 2015-4/0001-EAP-pwd-peer-Fix-payload-length-validation-for-Commi.patch
 2015-4/0002-EAP-pwd-server-Fix-payload-length-validation-for-Com.patch
 2015-5/0001-NFC-Fix-payload-length-validation-in-NDEF-record-par.patch
+CVE-2016-4476.patch
+CVE-2016-4477-part1.patch
+CVE-2016-4477-part2.patch
+CVE-2016-4476-and-CVE-2016-4477.patch

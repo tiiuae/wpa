@@ -1,3 +1,19 @@
+wpa (1.0-3+deb7u4) wheezy-security; urgency=high
+
+  * Non-maintainer upload by the LTS team.
+  * Fix CVE-2016-4476 and CVE-2016-4477.
+    A vulnerability was found in how hostapd and wpa_supplicant writes the
+    configuration file update for the WPA/WPA2 passphrase parameter. If this
+    parameter has been updated to include control characters either through a
+    WPS operation (CVE-2016-4476) or through local configuration change over
+    the wpa_supplicant control interface (CVE-2016-4477), the resulting
+    configuration file may prevent the hostapd and wpa_supplicant from starting
+    when the updated file is used. In addition for wpa_supplicant, it may be
+    possible to load a local library file and execute code from there with the
+    same privileges under which the wpa_supplicant process runs.
+
+ -- Markus Koschany <apo@debian.org>  Sat, 14 May 2016 22:37:10 +0200
+
 wpa (1.0-3+deb7u3) wheezy-security; urgency=high
 
   * Non-maintainer upload by the Security Team.
