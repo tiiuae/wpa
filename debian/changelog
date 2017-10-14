@@ -1,4 +1,4 @@
-wpa (2.3-1+deb8u5) UNRELEASED; urgency=high
+wpa (2.3-1+deb8u5) jessie-security; urgency=high
 
   * Non-maintainer upload by the Security Team.
   * Add patches to fix WPA protocol vulnerabilities (CVE-2017-13077,
@@ -14,7 +14,7 @@ wpa (2.3-1+deb8u5) UNRELEASED; urgency=high
     - FT: Do not allow multiple Reassociation Response frames
     - TDLS: Ignore incoming TDLS Setup Response retries
 
- -- Yves-Alexis Perez <corsac@debian.org>  Sat, 14 Oct 2017 14:03:22 +0200
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 14 Oct 2017 14:11:26 +0200
 
 wpa (2.3-1+deb8u4) jessie; urgency=medium
 
