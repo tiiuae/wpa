@@ -1,3 +1,11 @@
+wpa (2.3-1+deb8u6) jessie-security; urgency=high
+
+  * SECURITY UPDATE:
+    - CVE-2018-14526: Ignore unauthenticated encrypted EAPOL-Key data
+      (Closes: #905739)
+
+ -- Andrej Shadura <andrewsh@debian.org>  Thu, 09 Aug 2018 09:59:11 +0200
+
 wpa (2.3-1+deb8u5) jessie-security; urgency=high
 
   * Non-maintainer upload by the Security Team.
