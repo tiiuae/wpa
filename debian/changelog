@@ -1,10 +1,10 @@
-wpa (2:2.4-1+deb9u2) UNRELEASED; urgency=high
+wpa (2:2.4-1+deb9u2) stretch; urgency=high
 
   * SECURITY UPDATE:
     - CVE-2018-14526: Ignore unauthenticated encrypted EAPOL-Key data
       (Closes: #905739)
 
- -- Andrej Shadura <andrewsh@debian.org>  Wed, 08 Aug 2018 22:50:11 +0200
+ -- Andrej Shadura <andrewsh@debian.org>  Thu, 09 Aug 2018 09:23:49 +0200
 
 wpa (2:2.4-1+deb9u1) stretch-security; urgency=high
 
