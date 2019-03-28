@@ -1,3 +1,14 @@
+wpa (2.3-1+deb8u7) jessie-security; urgency=high
+
+  * Non-maintainer upload by the LTS team.
+  * Fix CVE-2016-10743:
+    It was found that the fallback mechanism for generating a WPS pin in
+    hostapd, an IEEE 802.11 AP and IEEE 802.1X/WPA/WPA2/EAP Authenticator, used
+    a low quality pseudorandom number generator. This was fixed by using only
+    the high quality os_get_random function.
+
+ -- Markus Koschany <apo@debian.org>  Thu, 28 Mar 2019 12:30:45 +0100
+
 wpa (2.3-1+deb8u6) jessie-security; urgency=high
 
   * SECURITY UPDATE:

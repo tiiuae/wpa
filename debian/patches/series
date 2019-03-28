@@ -36,3 +36,4 @@ CVE-2015-5316.patch
 2017-1/0009-FT-Do-not-allow-multiple-Reassociation-Response-fram.patch
 2017-1/0010-TDLS-Ignore-incoming-TDLS-Setup-Response-retries.patch
 CVE-2018-14526/rebased-v2.6-0001-WPA-Ignore-unauthenticated-encrypted-EAPOL-Key-data.patch
+CVE-2016-10743.patch
