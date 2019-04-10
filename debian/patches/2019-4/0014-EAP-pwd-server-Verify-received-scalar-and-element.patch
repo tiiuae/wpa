@@ -22,11 +22,9 @@ Signed-off-by: Mathy Vanhoef <mathy.vanhoef@nyu.edu>
  src/eap_server/eap_server_pwd.c | 20 ++++++++++++++++++++
  1 file changed, 20 insertions(+)
 
-diff --git a/src/eap_server/eap_server_pwd.c b/src/eap_server/eap_server_pwd.c
-index d0fa54a..74979da 100644
 --- a/src/eap_server/eap_server_pwd.c
 +++ b/src/eap_server/eap_server_pwd.c
-@@ -718,6 +718,26 @@ eap_pwd_process_commit_resp(struct eap_sm *sm, struct eap_pwd_data *data,
+@@ -683,6 +683,26 @@
  		goto fin;
  	}
  
@@ -51,8 +49,5 @@ index d0fa54a..74979da 100644
 +	}
 +
  	/* check to ensure peer's element is not in a small sub-group */
- 	if (!crypto_bignum_is_one(cofactor)) {
- 		if (crypto_ec_point_mul(data->grp->group, data->peer_element,
--- 
-2.7.4
-
+ 	if (BN_cmp(cofactor, BN_value_one())) {
+ 		if (!EC_POINT_mul(data->grp->group, point, NULL,
