@@ -1,14 +1,17 @@
 wpa (2:2.4-1+deb9u3) UNRELEASED-stretch-security; urgency=medium
 
-  * Apply a partial security fix for CVE-XXXX:
+  * Apply a partial security fix for CVE-2019-9495:
     - OpenSSL: Use constant time operations for private bignums.
     - See https://w1.fi/security/2019-2/ for more details
-  * Apply a partial security fix for CVE-YYYY:
-    - EAP-pwd: Verify received scalar and element
-    - EAP-pwd server: Detect reflection attacks
+  * Apply security fixes:
+    - EAP-pwd server: Detect reflection attacks (CVE-2019-9497)
+    - EAP-pwd client: Verify received scalar and element
+      (CVE-2019-9498)
+    - EAP-pwd server: Verify received scalar and element
+      (CVE-2019-9499)
     - See https://w1.fi/security/2019-4/ for more details
   * Add an upstream patch to add crypto_ec_point_cmp() required
-    by the fixes for CVE-YYYY.
+    by the fixes for CVE-2019-9497.
   * Forcefully enable compilation of the ECC code.
 
  -- Andrej Shadura <andrewsh@debian.org>  Wed, 10 Apr 2019 12:49:08 +0200
