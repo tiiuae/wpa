@@ -6,7 +6,9 @@ wpa (2:2.4-1+deb9u3) stretch-security; urgency=high
   wpa 2.4 release, so porting it is not practical. Consider using strong
   passwords to prevent dictionary attacks.
 
-  For more details, please read the following documents:
+  For more information about the issues and their impace, see the Debian
+  Security Advisory DSA-4430-1.
+  For even more details, please read the following documents:
 
     - https://w1.fi/security/2019-2/eap-pwd-side-channel-attack.txt
     - https://w1.fi/security/2019-4/eap-pwd-missing-commit-validation.txt
