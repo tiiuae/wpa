@@ -1,12 +1,12 @@
-From c15de96e62d3e6af46a57171350620c50fdb99ab Mon Sep 17 00:00:00 2001
+From 0a36b71340d9b8f95208c3ef9d1aca647a851000 Mon Sep 17 00:00:00 2001
 From: Mathy Vanhoef <mathy.vanhoef@nyu.edu>
 Date: Sun, 31 Mar 2019 17:26:01 +0200
-Subject: [PATCH 15/17] EAP-pwd server: Detect reflection attacks
+Subject: [PATCH 12/20] EAP-pwd server: Detect reflection attacks
 
 When processing an EAP-pwd Commit frame, verify that the peer's scalar
 and elliptic curve element differ from the one sent by the server. This
 prevents reflection attacks where the adversary reflects the scalar and
-element sent by the server.
+element sent by the server. (CVE-2019-9497)
 
 The vulnerability allows an adversary to complete the EAP-pwd handshake
 as any user. However, the adversary does not learn the negotiated
@@ -20,9 +20,10 @@ Signed-off-by: Mathy Vanhoef <mathy.vanhoef@nyu.edu>
  src/eap_server/eap_server_pwd.c | 9 +++++++++
  1 file changed, 9 insertions(+)
 
+diff --git a/src/eap_server/eap_server_pwd.c b/src/eap_server/eap_server_pwd.c
 --- a/src/eap_server/eap_server_pwd.c
 +++ b/src/eap_server/eap_server_pwd.c
-@@ -718,6 +718,15 @@
+@@ -718,6 +718,15 @@ eap_pwd_process_commit_resp(struct eap_sm *sm, struct eap_pwd_data *data,
  		}
  	}
  
@@ -38,3 +39,6 @@ Signed-off-by: Mathy Vanhoef <mathy.vanhoef@nyu.edu>
  	/* compute the shared key, k */
  	if ((!EC_POINT_mul(data->grp->group, K, NULL, data->grp->pwe,
  			   data->peer_scalar, data->bnctx)) ||
+-- 
+2.7.4
+

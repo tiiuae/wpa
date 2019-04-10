@@ -1,16 +1,16 @@
-From 8283a6bc239f2fe2fdc923e7375ad0d7708b41f4 Mon Sep 17 00:00:00 2001
+From 751288275f9a4e68263f63f4897d84e14fa31c61 Mon Sep 17 00:00:00 2001
 From: Mathy Vanhoef <mathy.vanhoef@nyu.edu>
 Date: Sun, 31 Mar 2019 17:43:44 +0200
-Subject: [PATCH 16/17] EAP-pwd client: Verify received scalar and element
+Subject: [PATCH 13/20] EAP-pwd client: Verify received scalar and element
 
 When processing an EAP-pwd Commit frame, the server's scalar and element
-(elliptic curve point= were not validated. This allowed an adversary to
+(elliptic curve point) were not validated. This allowed an adversary to
 bypass authentication, and act as a rogue Access Point (AP) if the
 crypto implementation did not verify the validity of the EC point.
 
 Fix this vulnerability by assuring the received scalar lies within the
 valid range, and by checking that the received element is not the point
-at infinity and lies on the elliptic curve being used.
+at infinity and lies on the elliptic curve being used. (CVE-2019-9499)
 
 The vulnerability is only exploitable if OpenSSL version 1.0.2 or lower
 is used, or if LibreSSL or wolfssl is used. Newer versions of OpenSSL
@@ -22,9 +22,10 @@ Signed-off-by: Mathy Vanhoef <mathy.vanhoef@nyu.edu>
  src/eap_peer/eap_pwd.c | 20 ++++++++++++++++++++
  1 file changed, 20 insertions(+)
 
+diff --git a/src/eap_peer/eap_pwd.c b/src/eap_peer/eap_pwd.c
 --- a/src/eap_peer/eap_pwd.c
 +++ b/src/eap_peer/eap_pwd.c
-@@ -392,6 +392,26 @@
+@@ -392,6 +392,26 @@ eap_pwd_perform_commit_exchange(struct eap_sm *sm, struct eap_pwd_data *data,
  		goto fin;
  	}
  
@@ -51,3 +52,6 @@ Signed-off-by: Mathy Vanhoef <mathy.vanhoef@nyu.edu>
  	/* check to ensure server's element is not in a small sub-group */
  	if (BN_cmp(cofactor, BN_value_one())) {
  		if (!EC_POINT_mul(data->grp->group, point, NULL,
+-- 
+2.7.4
+
