@@ -51,6 +51,7 @@ CVE-2018-14526/rebased-v2.6-0001-WPA-Ignore-unauthenticated-encrypted-EAPOL-Key-
 2019-2/0001-OpenSSL-Use-constant-time-operations-for-private-big.patch
 2019-2/0002-Add-helper-functions-for-constant-time-operations.patch
 
+2019-4/0001-Add-crypto_ec_point_cmp.patch
 2019-4/0014-EAP-pwd-server-Verify-received-scalar-and-element.patch
 2019-4/0015-EAP-pwd-server-Detect-reflection-attacks.patch
 2019-4/0016-EAP-pwd-client-Verify-received-scalar-and-element.patch
