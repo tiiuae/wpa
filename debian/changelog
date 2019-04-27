@@ -1,6 +1,7 @@
 wpa (2:2.7+git20190128+0c1e29f-4~bpo9+1) UNRELEASED; urgency=medium
 
   * Rebuild for stretch-backports.
+  * Temporarily disable MACsec to allow building with an older libnl-3-dev.
 
  -- Andrej Shadura <andrewsh@debian.org>  Fri, 26 Apr 2019 15:35:40 +0200
 
