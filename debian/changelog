@@ -1,9 +1,10 @@
-wpa (2:2.7+git20190128+0c1e29f-4~bpo9+1) UNRELEASED; urgency=medium
+wpa (2:2.7+git20190128+0c1e29f-4~bpo9+1) stretch-backports; urgency=medium
 
   * Rebuild for stretch-backports.
   * Temporarily disable MACsec to allow building with an older libnl-3-dev.
+  * Disable getrandom(2) usage since it requires glibc 2.25.
 
- -- Andrej Shadura <andrewsh@debian.org>  Fri, 26 Apr 2019 15:35:40 +0200
+ -- Andrej Shadura <andrewsh@debian.org>  Sat, 27 Apr 2019 09:53:13 +0200
 
 wpa (2:2.7+git20190128+0c1e29f-4) unstable; urgency=high
 
