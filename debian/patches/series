@@ -37,3 +37,22 @@ CVE-2015-5316.patch
 2017-1/0010-TDLS-Ignore-incoming-TDLS-Setup-Response-retries.patch
 CVE-2018-14526/rebased-v2.6-0001-WPA-Ignore-unauthenticated-encrypted-EAPOL-Key-data.patch
 CVE-2016-10743.patch
+
+# CVE-2019-9495, only partial mitigation feasible for this wpa version
+2019-2/0001-OpenSSL-Use-constant-time-operations-for-private-big.patch
+# too invasive to backport (or for someone with more time+expertise)
+#2019-2/0002-Add-helper-functions-for-constant-time-operations.patch
+#2019-2/0003-OpenSSL-Use-constant-time-selection-for-crypto_bignu.patch
+#2019-2/0004-EAP-pwd-Use-constant-time-and-memory-access-for-find.patch
+
+# CVE-2019-9497 + CVE-2019-9498 + CVE-2019-9499
+2019-4/0001-Add-crypto_ec_point_cmp.patch
+2019-4/0011-EAP-pwd-server-Verify-received-scalar-and-element.patch
+2019-4/0012-EAP-pwd-server-Detect-reflection-attacks.patch
+2019-4/0013-EAP-pwd-client-Verify-received-scalar-and-element.patch
+# too invasive to backport (or for someone with more time+expertise)
+#2019-4/0014-EAP-pwd-Check-element-x-y-coordinates-explicitly.patch
+
+# CVE-2019-11555
+2019-5/0001-EAP-pwd-server-Fix-reassembly-buffer-handling.patch
+2019-5/0003-EAP-pwd-peer-Fix-reassembly-buffer-handling.patch
