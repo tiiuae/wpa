@@ -24,3 +24,11 @@ fix-ENGINE-support-with-openssl-1.1.patch
 2019-sae-eap/0014-EAP-pwd-Check-element-x-y-coordinates-explicitly.patch
 2019-5/0001-EAP-pwd-server-Fix-reassembly-buffer-handling.patch
 2019-5/0003-EAP-pwd-peer-Fix-reassembly-buffer-handling.patch
+2019-6/0000-EAP-pwd-Disallow-ECC-groups-with-a-prime-under-256-b.patch
+2019-6/0000-SAE-Reject-unsuitable-groups-based-on-REVmd-changes.patch
+2019-6/0001-SAE-Use-const_time_memcmp-for-pwd_value-prime-compar.patch
+2019-6/0002-EAP-pwd-Use-const_time_memcmp-for-pwd_value-prime-co.patch
+2019-6/0003-OpenSSL-Use-BN_bn2binpad-or-BN_bn2bin_padded-if-avai.patch
+2019-6/0004-SAE-Run-through-prf-result-processing-even-if-it-pri.patch
+2019-6/0005-EAP-pwd-Run-through-prf-result-processing-even-if-it.patch
+2019-6/0006-dragonfly-Disable-use-of-groups-using-Brainpool-curv.patch
