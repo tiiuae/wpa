@@ -12,7 +12,7 @@ wpa (2:2.7+git20190128+0c1e29f-6+deb10u1) buster-security; urgency=medium
        + https://wpa3.mathyvanhoef.com/
       Closes: #934180 (CVE-2019-13377)
 
- -- Andrej Shadura <andrewsh@debian.org>  Sat, 10 Aug 2019 10:32:06 +0200
+ -- Andrej Shadura <andrewsh@debian.org>  Tue, 17 Sep 2019 11:58:08 +0200
 
 wpa (2:2.7+git20190128+0c1e29f-6) unstable; urgency=medium
 
