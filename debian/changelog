@@ -1,12 +1,16 @@
-wpa (2:2.7+git20190128+0c1e29f-7) buster-security; urgency=high
+wpa (2:2.7+git20190128+0c1e29f-6+deb10u1) buster-security; urgency=medium
 
-  * SECURITY UPDATE (CVE-2019-13377):
+  * SECURITY UPDATE:
+    - AP mode PMF disconnection protection bypass.
+      More details:
+       + https://w1.fi/security/2019-7/
+      Closes: #940080 (CVE-2019-16275)
     - Timing-based side-channel attack against WPA3's Dragonfly handshake
       when using Brainpool curves.
       More details:
        + https://w1.fi/security/2019-6/
        + https://wpa3.mathyvanhoef.com/
-      Closes: #934180
+      Closes: #934180 (CVE-2019-13377)
 
  -- Andrej Shadura <andrewsh@debian.org>  Sat, 10 Aug 2019 10:32:06 +0200
 
