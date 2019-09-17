@@ -1,3 +1,13 @@
+wpa (2:2.4-1+deb9u5) stretch; urgency=medium
+
+  * SECURITY UPDATE:
+    - AP mode PMF disconnection protection bypass.
+      More details:
+       + https://w1.fi/security/2019-7/
+      Closes: #940080 (CVE-2019-16275)
+
+ -- Andrej Shadura <andrewsh@debian.org>  Mon, 13 Jan 2020 11:06:28 +0100
+
 wpa (2:2.4-1+deb9u4) stretch-security; urgency=high
 
   * SECURITY UPDATE (2019-5):

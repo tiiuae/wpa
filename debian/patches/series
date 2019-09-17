@@ -56,3 +56,5 @@ CVE-2018-14526/rebased-v2.6-0001-WPA-Ignore-unauthenticated-encrypted-EAPOL-Key-
 2019-4/0013-EAP-pwd-client-Verify-received-scalar-and-element.patch
 2019-5/0001-EAP-pwd-server-Fix-reassembly-buffer-handling.patch
 2019-5/0003-EAP-pwd-peer-Fix-reassembly-buffer-handling.patch
+
+2019-7/0001-AP-Silently-ignore-management-frame-from-unexpected-.patch
