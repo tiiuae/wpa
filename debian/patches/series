@@ -34,3 +34,4 @@ fix-ENGINE-support-with-openssl-1.1.patch
 2019-6/0006-dragonfly-Disable-use-of-groups-using-Brainpool-curv.patch
 2019-7/0001-AP-Silently-ignore-management-frame-from-unexpected-.patch
 upstream-fixes/0001-wpa_supplicant-Do-not-try-to-detect-PSK-mismatch-dur.patch
+upstream-fixes/0003-check-for-ft-support.patch
