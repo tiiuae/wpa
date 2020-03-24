@@ -1,3 +1,16 @@
+wpa (2:2.7+git20190128+0c1e29f-6+deb10u2) buster; urgency=medium
+
+  * Apply upstream patches:
+    - Do not try to detect PSK mismatch during PTK rekeying.
+      Fixes the 4-way WPA handshake in some situations.
+    - Check for FT support when selecting FT suites.
+      Closes: #942164.
+    - Fix RTM NEW/DELLINK IFLA_IFNAME copy for maximum ifname length.
+      Fixes the MAC randomisation issue with some cards.
+      LP: #1867908.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Tue, 24 Mar 2020 11:26:58 +0100
+
 wpa (2:2.7+git20190128+0c1e29f-6+deb10u1) buster-security; urgency=medium
 
   * SECURITY UPDATE:
