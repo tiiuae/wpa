@@ -68,6 +68,17 @@ index c85a28db44b7..e7065372e158 100644
  	if (stype == WLAN_FC_STYPE_BEACON) {
  		handle_beacon(hapd, mgmt, len, fi);
  		return 1;
--- 
-2.20.1
-
+--- a/src/utils/common.h
++++ b/src/utils/common.h
+@@ -518,6 +518,11 @@
+ 	return (a[0] & a[1] & a[2] & a[3] & a[4] & a[5]) == 0xff;
+ }
+ 
++static inline int is_multicast_ether_addr(const u8 *a)
++{
++	return a[0] & 0x01;
++}
++
+ #define broadcast_ether_addr (const u8 *) "\xff\xff\xff\xff\xff\xff"
+ 
+ #include "wpa_debug.h"
