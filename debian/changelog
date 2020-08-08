@@ -1,3 +1,16 @@
+wpa (2:2.4-1+deb9u7) stretch-security; urgency=high
+
+  * Add patch to fix:
+    - EAP-pwd server: Use os_get_random() for unpredictable token.
+      (Fixes: CVE-2019-10064)
+    - CVE-2020-12695:
+      - WPS UPnP: Do not allow event subscriptions with URLs to other networks.
+      - For the other issues:
+        - WPS UPnP: Fix event message generation using a long URL path.
+        - WPS UPnP: Handle HTTP initiation failures for events more properly.
+
+ -- Utkarsh Gupta <utkarsh@debian.org>  Sun, 09 Aug 2020 00:22:36 +0530
+
 wpa (2:2.4-1+deb9u6) stretch; urgency=medium
 
   * Refresh the patch for CVE-2019-16275 to include the missing inline

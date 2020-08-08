@@ -59,3 +59,6 @@ CVE-2018-14526/rebased-v2.6-0001-WPA-Ignore-unauthenticated-encrypted-EAPOL-Key-
 
 2019-7/0001-AP-Silently-ignore-management-frame-from-unexpected-.patch
 upstream-fixes/0006-nl80211-fix-RTM-NEW-DELLINK-IFLA_IFNAME.patch
+
+CVE-2020-12695.patch
+CVE-2019-10064.patch
