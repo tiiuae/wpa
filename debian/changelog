@@ -1,3 +1,14 @@
+wpa (2:2.4-1+deb9u8) stretch-security; urgency=high
+
+  * Non-maintainer upload by the LTS Team.
+  * CVE-2021-0326
+    Missing validation of data can result in a buffer over-write,
+    which might lead to a DoS of the wpa_supplicant process or
+    potentially arbitrary code execution.
+  * Enable support for WPA-EAP-SUITE-B(-192) (Closes: #982548).
+
+ -- Thorsten Alteholz <debian@alteholz.de>  Thu, 18 Feb 2021 22:03:02 +0100
+
 wpa (2:2.4-1+deb9u7) stretch-security; urgency=high
 
   * Add patch to fix:

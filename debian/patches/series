@@ -62,3 +62,5 @@ upstream-fixes/0006-nl80211-fix-RTM-NEW-DELLINK-IFLA_IFNAME.patch
 
 CVE-2020-12695.patch
 CVE-2019-10064.patch
+
+CVE-2021-0326.patch
