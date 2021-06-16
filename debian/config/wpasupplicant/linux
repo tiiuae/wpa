@@ -607,3 +607,7 @@ CONFIG_DPP=y
 
 #Legacy support WEP
 CONFIG_WEP=y
+
+# Enable 802.11s layer-2 routing and forwarding
+#mesh_fwding=1
+
