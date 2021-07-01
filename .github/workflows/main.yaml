@@ -58,7 +58,7 @@ jobs:
           set -exu
           jfrog rt c import "$ARTIFACTORY_TOKEN"
           jfrog rt ping
-          pkg=$(find bin -name '*wpa*.deb')
+          pkg=$(find bin -name 'wpasupplicant*.deb')
           jfrog rt u --deb "$DISTRIBUTION/$COMPONENT/$ARCHITECTURE" \
                      --target-props COMMIT="$GITHUB_SHA" \
                      --build-name "$BUILD_NAME" \
