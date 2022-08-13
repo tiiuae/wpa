@@ -11,10 +11,10 @@ for Debian and its downstreams.
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/wpa_supplicant/Makefile b/wpa_supplicant/Makefile
-index cb66def..26b0c93 100644
+index a6bcb4c..e99be46 100644
 --- a/wpa_supplicant/Makefile
 +++ b/wpa_supplicant/Makefile
-@@ -170,7 +170,7 @@ CFLAGS += -DCONFIG_ELOOP_KQUEUE
+@@ -177,7 +177,7 @@ CFLAGS += -DCONFIG_ELOOP_KQUEUE
  endif
  
  ifdef CONFIG_EAPOL_TEST

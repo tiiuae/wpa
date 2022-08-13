@@ -26,10 +26,10 @@ Origin: http://lists.infradead.org/pipermail/hostap/2022-January/040185.html
  3 files changed, 8 insertions(+), 1 deletion(-)
 
 diff --git a/src/drivers/driver.h b/src/drivers/driver.h
-index d3312a3..b5b6264 100644
+index dfb4337..466b32b 100644
 --- a/src/drivers/driver.h
 +++ b/src/drivers/driver.h
-@@ -2052,6 +2052,9 @@ struct wpa_driver_capa {
+@@ -2095,6 +2095,9 @@ struct wpa_driver_capa {
  	/** Maximum number of iterations in a single scan plan */
  	u32 max_sched_scan_plan_iterations;
  
@@ -40,10 +40,10 @@ index d3312a3..b5b6264 100644
  	int sched_scan_supported;
  
 diff --git a/src/drivers/driver_nl80211_capa.c b/src/drivers/driver_nl80211_capa.c
-index 83868b7..b33b6ba 100644
+index 7ede0d0..e33a29e 100644
 --- a/src/drivers/driver_nl80211_capa.c
 +++ b/src/drivers/driver_nl80211_capa.c
-@@ -885,6 +885,10 @@ static int wiphy_info_handler(struct nl_msg *msg, void *arg)
+@@ -895,6 +895,10 @@ static int wiphy_info_handler(struct nl_msg *msg, void *arg)
  			nla_get_u32(tb[NL80211_ATTR_MAX_SCAN_PLAN_ITERATIONS]);
  	}
  
@@ -55,10 +55,10 @@ index 83868b7..b33b6ba 100644
  		capa->max_match_sets =
  			nla_get_u8(tb[NL80211_ATTR_MAX_MATCH_SETS]);
 diff --git a/src/drivers/driver_nl80211_scan.c b/src/drivers/driver_nl80211_scan.c
-index 1316084..b0f0951 100644
+index d54dd3a..6c486e9 100644
 --- a/src/drivers/driver_nl80211_scan.c
 +++ b/src/drivers/driver_nl80211_scan.c
-@@ -207,7 +207,7 @@ nl80211_scan_common(struct i802_bss *bss, u8 cmd,
+@@ -222,7 +222,7 @@ nl80211_scan_common(struct i802_bss *bss, u8 cmd,
  		wpa_printf(MSG_DEBUG, "nl80211: Passive scan requested");
  	}
  
