@@ -1,3 +1,9 @@
+wpa (2:2.10+git20220729+b704dc72ef82-1) UNRELEASED; urgency=medium
+
+  * New upstream snapshot.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sat, 13 Aug 2022 16:04:10 +0200
+
 wpa (2:2.10-9) unstable; urgency=medium
 
   [ Sebastien Bacher ]
