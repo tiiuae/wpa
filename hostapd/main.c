@@ -15,6 +15,7 @@
 #include "utils/common.h"
 #include "utils/eloop.h"
 #include "utils/uuid.h"
+#include "crypto/crypto.h"
 #include "crypto/random.h"
 #include "crypto/tls.h"
 #include "common/version.h"
@@ -465,7 +466,7 @@ static void usage(void)
 	show_version();
 	fprintf(stderr,
 		"\n"
-		"usage: hostapd [-hdBKtv] [-P <PID file>] [-e <entropy file>] "
+		"usage: hostapd [-hdBKtvq] [-P <PID file>] [-e <entropy file>] "
 		"\\\n"
 		"         [-g <global ctrl_iface>] [-G <group>]\\\n"
 		"         [-i <comma-separated list of interface names>]\\\n"
@@ -684,7 +685,7 @@ int main(int argc, char *argv[])
 #endif /* CONFIG_DPP */
 
 	for (;;) {
-		c = getopt(argc, argv, "b:Bde:f:hi:KP:sSTtu:vg:G:");
+		c = getopt(argc, argv, "b:Bde:f:hi:KP:sSTtu:vg:G:q");
 		if (c < 0)
 			break;
 		switch (c) {
@@ -723,7 +724,6 @@ int main(int argc, char *argv[])
 		case 'v':
 			show_version();
 			exit(1);
-			break;
 		case 'g':
 			if (hostapd_get_global_ctrl_iface(&interfaces, optarg))
 				return -1;
@@ -757,6 +757,9 @@ int main(int argc, char *argv[])
 			if (hostapd_get_interface_names(&if_names,
 							&if_names_size, optarg))
 				goto out;
+			break;
+		case 'q':
+			wpa_debug_level++;
 			break;
 		default:
 			usage();
@@ -934,6 +937,7 @@ int main(int argc, char *argv[])
 
 	fst_global_deinit();
 
+	crypto_unload();
 	os_program_deinit();
 
 	return ret;

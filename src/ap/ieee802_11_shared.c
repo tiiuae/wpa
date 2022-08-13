@@ -17,6 +17,7 @@
 #include "ap_config.h"
 #include "ap_drv_ops.h"
 #include "wpa_auth.h"
+#include "dpp_hostapd.h"
 #include "ieee802_11.h"
 
 
@@ -873,7 +874,7 @@ u8 * hostapd_eid_owe_trans(struct hostapd_data *hapd, u8 *eid,
 size_t hostapd_eid_dpp_cc_len(struct hostapd_data *hapd)
 {
 #ifdef CONFIG_DPP2
-	if (hapd->conf->dpp_configurator_connectivity)
+	if (hostapd_dpp_configurator_connectivity(hapd))
 		return 6;
 #endif /* CONFIG_DPP2 */
 	return 0;
@@ -885,7 +886,7 @@ u8 * hostapd_eid_dpp_cc(struct hostapd_data *hapd, u8 *eid, size_t len)
 	u8 *pos = eid;
 
 #ifdef CONFIG_DPP2
-	if (!hapd->conf->dpp_configurator_connectivity || len < 6)
+	if (!hostapd_dpp_configurator_connectivity(hapd) || len < 6)
 		return pos;
 
 	*pos++ = WLAN_EID_VENDOR_SPECIFIC;
@@ -998,7 +999,7 @@ int get_tx_parameters(struct sta_info *sta, int ap_max_chanwidth,
 		 * If a VHT Operation element was present, use it to determine
 		 * the supported channel bandwidth.
 		 */
-		if (oper->vht_op_info_chwidth == 0) {
+		if (oper->vht_op_info_chwidth == CHANWIDTH_USE_HT) {
 			requested_bw = ht_40mhz ? 40 : 20;
 		} else if (oper->vht_op_info_chan_center_freq_seg1_idx == 0) {
 			requested_bw = 80;
@@ -1063,7 +1064,8 @@ u8 * hostapd_eid_rsnxe(struct hostapd_data *hapd, u8 *eid, size_t len)
 
 	if (wpa_key_mgmt_sae(hapd->conf->wpa_key_mgmt) &&
 	    (hapd->conf->sae_pwe == 1 || hapd->conf->sae_pwe == 2 ||
-	     hostapd_sae_pw_id_in_use(hapd->conf) || sae_pk) &&
+	     hostapd_sae_pw_id_in_use(hapd->conf) || sae_pk ||
+	     wpa_key_mgmt_sae_ext_key(hapd->conf->wpa_key_mgmt)) &&
 	    hapd->conf->sae_pwe != 3) {
 		capab |= BIT(WLAN_RSNX_CAPAB_SAE_H2E);
 #ifdef CONFIG_SAE_PK
@@ -1092,4 +1094,30 @@ u8 * hostapd_eid_rsnxe(struct hostapd_data *hapd, u8 *eid, size_t len)
 		*pos++ = capab;
 
 	return pos;
+}
+
+
+u16 check_ext_capab(struct hostapd_data *hapd, struct sta_info *sta,
+		    const u8 *ext_capab_ie, size_t ext_capab_ie_len)
+{
+#ifdef CONFIG_INTERWORKING
+	/* check for QoS Map support */
+	if (ext_capab_ie_len >= 5) {
+		if (ext_capab_ie[4] & 0x01)
+			sta->qos_map_enabled = 1;
+	}
+#endif /* CONFIG_INTERWORKING */
+
+	if (ext_capab_ie_len > 0) {
+		sta->ecsa_supported = !!(ext_capab_ie[0] & BIT(2));
+		os_free(sta->ext_capability);
+		sta->ext_capability = os_malloc(1 + ext_capab_ie_len);
+		if (sta->ext_capability) {
+			sta->ext_capability[0] = ext_capab_ie_len;
+			os_memcpy(sta->ext_capability + 1, ext_capab_ie,
+				  ext_capab_ie_len);
+		}
+	}
+
+	return WLAN_STATUS_SUCCESS;
 }
